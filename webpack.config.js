@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
+    publicPath: 'build/'
   },
   module: {
     rules: [
@@ -16,6 +17,16 @@ module.exports = {
       {
         test: /\.css$/,
         use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader']
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: { limit: 40000 }
+          },
+          'image-webpack-loader'
+        ]
       }
     ]
   },
