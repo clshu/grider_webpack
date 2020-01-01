@@ -1,16 +1,18 @@
-import big from '../assets/athelets.jpg'
+// import big from '../assets/athelets.jpg'
 import small from '../assets/giraffe.jpg'
 
 import '../styles/image_viewer.css'
 
-const image = document.createElement('img')
+export default () => {
+  const image = document.createElement('img')
 
-image.src = small
+  image.src = small
 
-document.body.appendChild(image)
+  document.body.appendChild(image)
+}
 
-const bigImage = document.createElement('img')
+// const bigImage = document.createElement('img')
 
-bigImage.src = big
+// bigImage.src = big
 
-document.body.appendChild(bigImage)
+// document.body.appendChild(bigImage)
